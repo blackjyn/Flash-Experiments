@@ -2,6 +2,8 @@
 A collection of Flash and Pixel Bender effects and experiments done between 2007-2011
 by **Edvard Toth** (http://edvardtoth.com)
 
+Most of the content is available in form of FlashDevelop projects, with all supporting FLAs and asset files included, where applicable.
+
 Contents
 ----------------
 * **AnimationControl**
