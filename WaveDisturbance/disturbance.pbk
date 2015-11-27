@@ -1,0 +1,74 @@
+<languageVersion : 1.0;>
+
+kernel Disturbance
+<   namespace : "com.etoth";
+    vendor : "edvardtoth.com";
+    version : 1;
+    description : "Attenuated wave disturbance";
+>
+{
+    parameter float ticker
+    <
+        minValue:0.0;
+        maxValue:1.0;
+        defaultValue:0.0;
+    >;
+    
+    parameter float amplitude
+    <
+        minValue:0.0;
+        maxValue:100.0;
+        defaultValue:40.0;
+    >;
+    
+    parameter float frequency
+    <
+        minValue:0.0;
+        maxValue:100.00;
+        defaultValue:19.0;
+    >;
+
+    parameter float radius
+    <
+        minValue:0.0;
+        maxValue:300.0;
+        defaultValue:200.00;
+    >;
+    
+    parameter float xPos
+    <
+        minValue:0.0;
+        maxValue:600.0;
+        defaultValue:300.00;
+    >;
+    
+    parameter float yPos
+    <
+        minValue:0.0;
+        maxValue:600.0;
+        defaultValue:300.00;
+    >;
+
+    input image4 src;
+    output pixel4 dst;
+
+    void evaluatePixel()
+    {
+       float2 coords = outCoord();
+        
+        // interestingly this is noticeably faster than (pow((xPos-coords.x),2.0)
+        float dist = sqrt ((xPos-coords.x) * (xPos-coords.x) + (yPos-coords.y) * (yPos-coords.y));
+
+        float ampSlice = amplitude / radius;
+        float ampModifier = radius - dist;
+
+        if (ampModifier < 0.0)
+        {ampModifier = 0.0;}
+        if (ampModifier > radius)
+        {ampModifier = radius;}
+
+        coords.y += sin( (coords.y-(ticker) ) * frequency ) * (ampModifier * ampSlice); 
+
+        dst = sampleNearest(src, coords);
+       }
+}

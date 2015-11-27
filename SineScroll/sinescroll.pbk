@@ -1,0 +1,36 @@
+<languageVersion : 1.0;>
+
+kernel SineScroll
+<   namespace : "com.etoth";
+    vendor : "edvardtoth.com";
+    version : 1;
+    description : "Demoscene style sine scroller";
+>
+{
+    parameter float sinespeed
+    <
+        minValue:0.0;
+        maxValue:100.0;
+        defaultValue:0.0;
+    >;
+ 
+    parameter float amplitude
+    <
+        minValue:0.0;
+        maxValue:100.0;
+        defaultValue:0.0;
+    >;
+ 
+    input image4 canvas;
+    output pixel4 dst;
+    
+    void evaluatePixel()
+    {
+        float2 coords = outCoord();
+        float columnmod = coords.x * 0.01;
+        
+        coords.y += sin (sinespeed + columnmod) * amplitude;
+        
+        dst = sampleNearest(canvas, coords);
+       }
+}

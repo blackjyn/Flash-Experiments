@@ -1,0 +1,40 @@
+<languageVersion : 1.0;>
+
+kernel DepthMapShader
+<   namespace : "com.etoth";
+    vendor : "edvardtoth.com";
+    version : 1;
+    description : "DepthMap Shader";
+>
+{
+    parameter float zDepth
+    <
+        minValue:0.0;
+        maxValue:1.0;
+        defaultValue:1.0;
+    >;
+    
+    // this is the depth-map image providing the alpha-values
+    input image4 dmap; 
+    // this is the bitmapdata the red tag is drawn into
+    input image4 canvas;
+    
+    output pixel4 dst;
+    
+    void evaluatePixel()
+    {
+       float fadeRatio = 15.0;
+       pixel4 dm = sampleNearest (dmap, outCoord());
+        
+       if (dm.a <= zDepth)
+       {
+            dst = sampleNearest (canvas, outCoord());
+       }
+        else
+        {
+            float difference = (dm.a - zDepth) * fadeRatio;
+            
+            dst = sampleNearest (canvas, outCoord()) - difference;
+        }
+    }
+}
