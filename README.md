@@ -1,5 +1,5 @@
 # Flash / Actionscript Experiments
-A collection of legacy Flash, Actionscript and Pixel Bender effects and experiments done between 2007-2011
+A collection of legacy Flash, Actionscript3 and Pixel Bender effects and experiments done between 2007-2011
 by **Edvard Toth** (http://edvardtoth.com)
 
 Most of the content is available in form of FlashDevelop projects, with all supporting FLAs and asset files included, where applicable.
@@ -17,7 +17,7 @@ A raw, back-to-the-essentials class that manipulates and distorts a texture usin
 Drag the corner handles to distort the image.
 
 * **CircleMenu**
-An old, but unconventional and interesting navigation-system based on circle-segments that to represent selection items. Everything is procedurally generated: the segments are drawn with an arc-drawing routine, and everything (colors, radii, gaps, arc thickness etc.) is customizable. If you are good with the mouse, you can make a full 360 degree turn with each arc (this feature was coincidentally the most non-trivial part to do as well).
+An old, but unconventional and interesting navigation-system based on circle-segments that represent selection items. Everything is procedurally generated: the segments are drawn with an arc-drawing routine, and everything (colors, radii, gaps, arc thickness etc.) is customizable. If you are good with the mouse, you can make a full 360 degree turn with each arc (this feature was coincidentally the most non-trivial part to do as well).
 
 * **DepthMap**
 A Pixel Bender-based depth-map shader, which can be used to define complex multiple depth-level occlusion/masking situations in a scene.
