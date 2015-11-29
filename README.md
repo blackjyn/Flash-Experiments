@@ -16,6 +16,9 @@ A gnarly, twitchy, unsettling sound-visualizer effect, which relies on an animat
 A raw, back-to-the-essentials class that manipulates and distorts a texture using 2 triangles and UV coordinates.
 Drag the corner handles to distort the image.
 
+* **CircleMenu**
+An old, but unconventional and interesting navigation-system based on circle-segments that to represent selection items. Everything is procedurally generated: the segments are drawn with an arc-drawing routine, and everything (colors, radii, gaps, arc thickness etc.) is customizable. If you are good with the mouse, you can make a full 360 degree turn with each arc (this feature was coincidentally the most non-trivial part to do as well).
+
 * **DepthMap**
 A Pixel Bender-based depth-map shader, which can be used to define complex multiple depth-level occlusion/masking situations in a scene.
 Adjust the red tag object to push it farther into the distance, and observe the gradual (and often partial) occlusion taking place.
