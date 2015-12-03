@@ -10,7 +10,7 @@ Contents
 A little class that recursively crawls the entire hierarchy of nested animated MovieClips, and starts / stops every element within the hierarchy (not just the top level timeline). Demo SWF included.
 
 * **AuroraMembrane**
-A gnarly, twitchy, unsettling sound-visualizer effect, which relies on an animated perlinNoise map to supply pixel-displacement data. Soundtrack included.
+A gnarly, twitchy, unsettling sound-visualizer effect, which relies on an animated perlinNoise map to supply pixel-displacement data. With sample soundtrack included.
 
 * **BitmapDistorter**
 A raw, back-to-the-essentials class that manipulates and distorts a texture using 2 triangles and UV coordinates.
@@ -34,7 +34,7 @@ A 3D starfield of 1000 stars, and a bitmap-based "redshift" tail-effect. Relies 
 A tiny, but extremely useful function, which interpolates a number within a numeric range into another corresponding number within another arbitrary numeric range.
 
 * **SineScroll**
-A Pixel Bender-based replica of the classic sine-scroll effect that was a staple of the Amiga demo-scene. Soundtrack included.
+A Pixel Bender-based replica of the classic sine-scroll effect that was a staple of the Amiga demo-scene. With sample soundtrack included.
 
 * **TagCloud**
 A 3D cloud of tagwords, moving in a starfield-like manner.
